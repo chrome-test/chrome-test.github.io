@@ -5,13 +5,16 @@
   <title>MailTo Test</title>
 </head>
 <body>
-  <a id='mailto' href='mailto://'>Send Mail</a>
+  <h3 id='mailto' onclick="sendMail()">Send Mail</h3>
   <script>
-    //window.open("mailto://")
     document.getElementById('mailto').click();
-    setTimeout(function() {
-      window.location.reload();
-    }, 1000);    
+
+    function sendMail() {
+      window.open("mailto://")
+      setTimeout(function() {
+        window.location.reload();
+      }, 500);    
+     }
   </script>
 </body>
 </html>
