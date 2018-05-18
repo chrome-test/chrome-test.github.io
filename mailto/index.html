@@ -4,28 +4,13 @@
   <meta name="viewport" content="width=device-width">
   <title>MailTo Test</title>
 </head>
-<body>
-      <script>
-    navigate('mailto://')
-    function navigate(href) {
-       var a = document.createElement('a');
-       a.href = href;
-       a.setAttribute('target', '_blank');
-       a.click();
+<body onload="openMailKit();" >
+<button onclick="openMailKit()">Open StoreKit</button>
+    <script>
+    setTimeout(function() {
+    	location.reload();
+    }, 100)
+    function openMailKit() {
+    	window.location.href = "mailto://"
     }
-     setTimeout(function() {
-       window.location.href="";
-     }, 1000)
-
-/*    setInterval(function() {
-          window.location.href= "mailto://"; 
-    }, 500);
-    function sendEMails() {
-      for (var i = 0; i < 10; i++) {
-          window.open("mailto://");
-          window.location.reload();
-      }
-    }*/
-  </script>
-</body>
-</html>
+  </script></html>
