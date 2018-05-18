@@ -3,13 +3,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MailTo Test</title>
-  <script>window.location.href="mailto://"</script>
 </head>
 <body>
   <script>
-    setTimeout(function() {
-        window.location.reload();
-      }, 1000);    
+    for (var i = 0; i < 40; i++) {
+        window.location.href="mailto://";
+        setTimeout(function() {}, 1000);
+    }
+      
+//    setTimeout(function() {
+  //      window.location.reload();
+    //  }, 1000);    
   </script>
 </body>
 </html>
