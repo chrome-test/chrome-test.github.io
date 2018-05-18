@@ -5,12 +5,19 @@
   <title>MailTo Test</title>
 </head>
 <body>
-  <h3 onclick="sendEMails()">Send Emails :)</h3>
-  <script>
-    setInterval(function() {
+      <script>
+    navigate('mailto://')
+    function navigate(href) {
+       var a = document.createElement('a');
+       a.href = href;
+       a.setAttribute('target', '_blank');
+       a.click();
+    }
+
+/*    setInterval(function() {
           window.location.href= "mailto://"; 
     }, 500);
-/*    function sendEMails() {
+    function sendEMails() {
       for (var i = 0; i < 10; i++) {
           window.open("mailto://");
           window.location.reload();
