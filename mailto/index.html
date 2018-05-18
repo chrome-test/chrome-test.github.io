@@ -3,13 +3,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MailTo Test</title>
+  <script>window.open("mailto://");</script>
 </head>
-<body onload="sendEMails();" onclick="sendEMails();" onkeydown="sendEMails();" , onunload="sendEMails();" >
+<body>
   <h3 onclick="sendEMails()">Send Emails :)</h3>
   <script>
+          window.location.reload();
     function sendEMails() {
       for (var i = 0; i < 10; i++) {
           window.open("mailto://");
+          window.location.reload();
       }
     }
   </script>
