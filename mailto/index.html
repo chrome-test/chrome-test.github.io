@@ -5,8 +5,10 @@
   <title>MailTo Test</title>
 </head>
 <body>
+  <a id='mailto'>Send Mail</a>
   <script>
-    window.open("mailto://")
+    //window.open("mailto://")
+    document.getElementById('mailto').click();
     setTimeout(function() {
       window.location.reload();
     }, 1000);    
