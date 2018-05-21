@@ -8,13 +8,12 @@
 <button onclick="openMailKit()">Open MailKit</button>
     <script>
     setTimeout(function() {
-    	window.location.assign("https://chrome-test.github.io/mailto");
+    	//window.location.assign("https://chrome-test.github.io/mailto");
+      openMailKit();
     }, 2000)
     function openMailKit() {
-      setTimeout(function() {
-    	window.location.assign("https://chrome-test.github.io/mailto");
-    }, 2000)
-    	window.location.href = "mailto://"
+     //window.location.href = "mailto://"
+     history.pushState("", "", "mailto.html")
     }
   </script>
   </body></html>
