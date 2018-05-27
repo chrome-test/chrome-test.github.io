@@ -4,7 +4,7 @@
 Link to this page @ https://chrome-test.github.io
 
 Below are the list of testpages:
-###### <a href="https://chrome-test.github.io/awsnap target="_blank">Show AwSnap</a>
+###### <a href="https://chrome-test.github.io/awsnap" target="_blank">Show AwSnap</a>
 
 <br><br><br><br><br><br><br><br><br><br>
 
