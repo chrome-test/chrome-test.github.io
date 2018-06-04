@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  	var nameEQ = "testcookie=";
+
+	function setCookie(value, exdays=1) {
+
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        expires = "; expires="+d.toUTCString();
+        var value =  document.getElementById("cookie_value").value;
+        //document.cookie = nameEQ+ value + ";expires=Mon, 28 Dec 2020 12:00:00 UTC" +";path=/";
+	    document.cookie=nameEQ+value+expires+";path=/";
+	}
+
+
+    function getCookie() {
+	    var ca = document.cookie.split(';');
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+          c= c.trim();  console.debug("c:"+c);
+
+          if(c.startsWith(nameEQ) == true)
+           return c.substring(nameEQ.length,c.length);
+	        //while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	        //if (c.indexOf(nameEQ) == 0)
+            //return c.substring(nameEQ.length,c.length);
+
+	    }
+      return null;
+    }
+
+
+	function printCookie() {
+		document.getElementById("del").innerHTML= getCookie();
+	}
+
+    function deleteCookie() {
+	    document.cookie="testcookie=;expires=0; path=/;";
+        document.getElementById("del").innerHTML=getCookie();
+
+	}
+
+	</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test cookies</title>
+
+</head>
+<body onload="printCookie()">
+<b>TEST PAGE TO SET/GET/DELETE COOKIES :</b>
+<p><b> Set Cookie</b></p>
+<p>Please fill in a value in the input field:</p>
+
+
+<input type="text" id="cookie_value" value="">
+
+
+<p><button onclick="setCookie()">Set Cookie</button></p>
+</br>
+  <p><b> Read Cookie</b></p>
+<div id="Cookie">The value of cookie is :
+  <div id=del>
+</div>
+  </div>
+<p><button onclick="printCookie()">Get Cookie</button></p>
+  </br>
+
+
+  <p><b> Delete Cookie</b></p>
+
+<p><button onClick="deleteCookie()">Delete Cookie</button></p>
+</body>
+</html>
