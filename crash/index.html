@@ -1,0 +1,19 @@
+<head>
+<title>Crash</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+</head>
+<body>
+<form method="POST" action="https://www.example.com">
+</form>
+<script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    setTimeout(function() {
+      window.document.forms[0].submit();
+    }, 1000);    
+    setTimeout(function() {
+      window.history.forward();
+    }, 6000);
+  });
+</script>
+</body>
