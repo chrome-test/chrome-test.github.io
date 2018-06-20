@@ -4,15 +4,16 @@
 </head>
 <body>
 <form method="POST" action="https://www.example.com">
+  <button type='Submit'>Post Nothing</button>
 </form>
 <script>
   $(document).ready(function() {
     setTimeout(function() {
-      window.document.forms[0].submit();
+      //window.document.forms[0].submit();
     }, 1000);    
     setTimeout(function() {
       window.history.forward();
-    }, 6000);
+    }, 5000);
   });
 </script>
 </body>
