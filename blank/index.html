@@ -20,7 +20,8 @@
   function generate() {
     var url = ele('url').value;
     var size = parseInt(ele('size').value);
-    
+    if(url.indexOf('http') == -1)
+      url = 'http://' + url;
     var garbage = '/#';
     size = size - (url.length + garbage.length);
     for(var i = 0; i < size; i++)
