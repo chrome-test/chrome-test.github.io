@@ -6,6 +6,15 @@
 </head>
 <body>
   <h3 onclick='badssl()'>Tap Here</h3>
+  <hr>
+  <p>
+  function badssl() {
+      var z = window.open('https://ex.yahoo.com');
+      setTimeout(function() {
+        z.location.assign("https://www.google.com");
+      }, 3000);
+    }
+  </p>
 
   <script>
     function badssl() {
