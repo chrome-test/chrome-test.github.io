@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Spoofy Interstitials</title>
+</head>
+<body>
+  <h3 onclick='badssl()'>Tap Here</h3>
+
+  <script>
+    function badssl() {
+      var z = window.open('https://ex.yahoo.com');
+      setTimeout(function() {
+        z.location.assign("https://www.google.com");
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
