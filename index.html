@@ -1,0 +1,9 @@
+<title>Empty Snapshot</title>
+<img src='/chrome.png' width="100" height="100"/>
+Last reloaded@ <div id='time'></div>
+<script>
+    document.getElementById('time').innerHTML = new Date();
+    setInterval(function(){
+      window.location.reload();
+    }, 10000);
+  </script>
