@@ -125,25 +125,24 @@
   <body>
   <em>Beware what you post, all the forms send data to https://example.com.</em>
   <br>
-  <h3>Basic form key/value Autocomplete (autocomplete="off")</h3>
+  <h3>Basic form key/value Autocomplete (unstructured data)</h3>
 
-<form name="form300off" id="form300off" action="/generic_submit" method="post" autocomplete="off">
-  This Is: <input type="text" name="n300" autocomplete="off"/><br>
+<form name="form300" id="form300" action="/generic_submit" method="post">
+  This Is: <input type="text" name="n300"><br>
   <input type="reset" value="Reset">
-  <input type="submit" value="Submit" id="key_value_autocomplete_off_submit">
+  <input type="submit" value="Submit" id="key_value_autocomplete_submit">
 </form>
 
 <p>
 
-<button type="button" onclick="BasicFillForm('form300off', 'Sparta')">Sparta</button>
+<button type="button" onclick="BasicFillForm('form300', 'Sparta')">Sparta</button>
 <br>
-<button type="button" onclick="BasicFillForm('form300off', 'Simpsons')">Simpsons</button>
+<button type="button" onclick="BasicFillForm('form300', 'Simpsons')">Simpsons</button>
 <br>
-<button type="button" onclick="BasicFillForm('form300off', 'Superman')">Superman</button>
+<button type="button" onclick="BasicFillForm('form300', 'Superman')">Superman</button>
 <br>
 
-</p>
-<hr>
+</p><hr>
 <button type="button" onclick="FlipRTL()">RTL &lt;-&gt; LTR</button>
 
 </body></html>
