@@ -128,9 +128,9 @@
   <h3>Credit Card autofill</h3>
 
 <form name="cc1.1" id="cc1" action="https://example.com/" method="post">
-  Name on card: <input autofocus="" type="text" name="name" id="credit_card_name"><br>
-  Credit card number: <input type="text" name="CCNo" id="credit_card_number"><br>
-  Expiry Date: <select name="CCExpiresMonth">
+  Name on card: <input title="credit_card_name" autofocus="" type="text" name="name" id="credit_card_name"><br>
+  Credit card number: <input title="credit_card_number" type="text" name="CCNo" id="credit_card_number"><br>
+  Expiry Date: <select title="CCExpiresMonth" name="CCExpiresMonth">
     <option value="01">01</option>
     <option value="02">02</option>
     <option value="03">03</option>
@@ -145,7 +145,7 @@
     <option value="12">12</option>
   </select>
   /
-<select name="CCExpiresYear">
+<select title="CCExpiresYear" name="CCExpiresYear">
     <option value="2010">2010</option>
     <option value="2011">2011</option>
     <option value="2012">2012</option>
@@ -156,7 +156,7 @@
     <option value="2017">2017</option>
     <option value="2018">2018</option>
     <option value="2019">2019</option>
-    <option value="2020">2020</option>
+    <option title= "2020" value="2020">2020</option>
     <option value="2021">2021</option>
     <option value="2022">2022</option>
     <option value="2023">2023</option>
