@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by anonymous (http://jsbin.com/yukoyowoho/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title>Manual Fallback for Forms</title>
+</head>
+<body>
+  <h2>Manual Fallback for Forms (Without Type)</h2>
+  <form id="checkout" name="checkout" action="https://example.com" method="post">
+    Name: <input name="name_address"><br>
+    Address: <input name="address"><br>
+    City: <input name="city"><br>
+    State: <select name="state">
+      <option value="" selected>Select a state</option>
+      <option value="CA">CA</option>
+      <option value="MA">MA</option>
+      <option value="NY">NY</option>
+      <option value="MD">MD</option>
+      <option value="OR">OR</option>
+      <option value="OH">OH</option>
+      <option value="IL">IL</option>
+      <option value="DC">DC</option>
+    </select><br>
+    Zip: <input name="zip"><br>
+    Country: <input name="country"><br>
+    <hr/>
+    <h4>Credit Card Section </h4>
+    Name on card: <input name="name_cc"><br>
+    Credit card number: <input name="CCNo"><br>
+    Expiry Date: <select name="CCExpiresMonth">
+      <option value="">MM</option>
+      <option value="01">01</option>
+      <option value="02">02</option>
+      <option value="03">03</option>
+      <option value="04">04</option>
+      <option value="05">05</option>
+      <option value="06">06</option>
+      <option value="07">07</option>
+      <option value="08">08</option>
+      <option value="09">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select> / <select name="CCExpiresYear">
+      <option value="">YY</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+    </select><br>
+    CVC: <input name="cvc"><br>
+    <br/>
+    <input id="fill" type="button" value="Fill with default values">
+    <input type="submit" value="Submit">
+  </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../utils.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('#fill').click(function() {
+    $(':input[name="name_address"]').val('John Smith');
+    $(':input[name="address"]').val('1600 Amphitheatre Pkwy');
+    $(':input[name="city"]').val('Mountain View');
+    $(':input[name="state"]').val('CA');
+    $(':input[name="zip"]').val('94043');
+    $(':input[name="country"]').val('US');
+    $(':input[name="name_cc"]').val('John Smith');
+    $(':input[name="CCNo"]').val('5454545454545454');
+    $(':input[name="CCExpiresMonth"]').val('12');
+    $(':input[name="CCExpiresYear"]').val(getNextYear());
+    $(':input[name="cvc"]').val('123');
+  });
+});
+</script>
+</body>
+</html>
