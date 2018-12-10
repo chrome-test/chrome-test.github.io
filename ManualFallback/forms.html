@@ -3,10 +3,11 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2018 by anonymous (http://jsbin.com/vuyafetoyi/1/edit)
+Copyright (c) 2018 by anonymous (http://jsbin.com/wihimejexe/1/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
+<meta name="robots" content="noindex">
 <meta name="robots" content="noindex">
 <html>
 <head>
@@ -15,7 +16,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 </head>
 <body>
   <h2>Manual Fallback for Forms (Without Type)</h2>
-  <form id="checkout" name="checkout" action="../ManualFallback/Done.html" method="get">
+  <form id="checkout" name="checkout" action="../ManualFallback/Done.html" method="post">
     Name: <input name="name_address"><br>
     Address: <input name="address"><br>
     City: <input name="city"><br>
@@ -84,7 +85,7 @@ $(function() {
     $(':input[name="name_cc"]').val('John Smith');
     $(':input[name="CCNo"]').val('5454545454545454');
     $(':input[name="CCExpiresMonth"]').val('12');
-    $(':input[name="CCExpiresYear"]').val(getNextYear());
+    $(':input[name="CCExpiresYear"]').val('2025');
     $(':input[name="cvc"]').val('123');
   });
 });
