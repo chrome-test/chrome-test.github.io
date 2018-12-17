@@ -17,10 +17,10 @@ Released under the MIT license: http://jsbin.mit-license.org
 <body>
   <h2>Manual Fallback for Forms (Without Type)</h2>
   <form id="checkout" name="checkout" action="../ManualFallback/Done.html" method="get">
-    Name: <input name="nnnn"><br>
-    Address: <input name="adadad"><br>
-    City: <input name="cici"><br>
-    State: <select name="stste">
+    Name: <input name="name_address"><br>
+    Address: <input name="address"><br>
+    City: <input name="city"><br>
+    State: <select name="state">
       <option value="" selected>Select a state</option>
       <option value="CA">CA</option>
       <option value="MA">MA</option>
@@ -35,9 +35,9 @@ Released under the MIT license: http://jsbin.mit-license.org
     Country: <input name="country"><br>
     <hr/>
     <h4>Credit Card Section </h4>
-    Name on card: <input name="ccnn"><br>
-    Credit card number: <input name="CCn"><br>
-    Expiry Date: <select name="Cece">
+    Name on card: <input name="name_cc"><br>
+    Credit card number: <input name="CCNo"><br>
+    Expiry Date: <select name="CCExpiresMonth">
       <option value="">MM</option>
       <option value="01">01</option>
       <option value="02">02</option>
@@ -51,7 +51,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       <option value="10">10</option>
       <option value="11">11</option>
       <option value="12">12</option>
-    </select> / <select name="CCEy">
+    </select> / <select name="CCExpiresYear">
       <option value="">YY</option>
       <option value="2016">2016</option>
       <option value="2017">2017</option>
