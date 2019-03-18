@@ -1,0 +1,14 @@
+<title>Search Image with Google</title>
+<body>
+<style>
+img {
+ width : 100px;
+ height: 100px;
+ background-color: grey;
+ border-radius: 50%;
+}
+</style>
+<img src="x">
+<br>
+<h3>Long tap on the circle, and choose "Search Google for This Image"</h3>
+</body>
