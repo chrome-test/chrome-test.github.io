@@ -9,7 +9,7 @@
   <div style="top:400px; position: absolute;" id="demo">
     
   </div>
-  <button onclick="cookies()">Add 5000 test cookies.</button><br>
+  <input id="count" type="number" value="10000"><button onclick="cookies()">Add test cookies.</button><br>
   <button onclick="removeCookies()">Remove All Cookies</button><br>
   <button onclick="countCookies()">Alert Cookie Count</button><br>
   
@@ -18,10 +18,12 @@
 function countCookies() {
     alert("You have " + document.cookie.split(';').length + " cookies");
 }
-function cookies() {    
-    for (var i = 0; i < 5000; i++) {
+function cookies() {
+    var count = document.getElementById("count").value;
+    for (var i = 0; i < count; i++) {
       setCookie(i);
     }
+    countCookies();
   }
     var d = new Date();
     d.setTime(d.getTime() + (5*24*60*60*1000));
