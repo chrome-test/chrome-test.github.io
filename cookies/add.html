@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <div style="top:400px; position: absolute;" id="demo">
+    
+  </div>
+  <button onclick="cookies()">Add 1000 test cookies.</button><br>
+  <button onclick="removeCookies()">Remove All Cookies</button><br>
+  <button onclick="countCookies()">Alert Cookie Count</button><br>
+  
+<script>
+ 
+function countCookies() {
+    alert("You have " + document.cookie.split(';').length + " cookies");
+}
+function cookies() {    
+    for (var i = 0; i < 1000; i++) {
+      setCookie(i);
+    }
+  }
+    var d = new Date();
+    d.setTime(d.getTime() + (5*24*60*60*1000));
+
+  function setCookie(i) {
+    var cname = "cookie" + i,  cvalue = "value" + i;
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  
+  function removeCookies() {
+    var res = document.cookie;
+    var multiple = res.split(";");
+    for(var i = 0; i < multiple.length; i++) {
+      var key = multiple[i].split("=");
+      document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+    }
+  }
+  
+  function rand(length) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < length; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+  }
+</script>
+  
+</body>
+</html>
