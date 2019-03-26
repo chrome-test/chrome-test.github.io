@@ -1,0 +1,16 @@
+<title>Push dummy pages</title>
+<br><br><br><br>
+<input type="number" id="count" value="100">
+<input type="button" onclick="push()" value="Push"></input>
+<script>
+    function push() {
+        var count = document.getElementById("count").value;
+        for (var i = 0; i < count; i++) {
+            var stateObj = {
+                foo: "bar_" + i,
+            };
+        history.pushState(stateObj, "page_"+i, "abc"+i+".html");
+        }
+        alert(count + " pages pushed");
+    }
+</script>
