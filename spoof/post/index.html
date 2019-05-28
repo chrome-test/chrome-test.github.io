@@ -18,8 +18,21 @@
     {
         document.cmsHomeForm.submit();
     }
+    function autoSubmitIfNew() {
+        if (document.cookie.indexOf("visited=") >= 0) {
+        }
+        else {
+      // set a new cookie
+          expiry = new Date();
+          expiry.setTime(expiry.getTime()+(10*60*1000)); // Ten minutes
+      // Date()'s toGMTSting() method will format the date correctly for a cookie
+          document.cookie = "visited=yes; expires=" + expiry.toGMTString();
+      //alert("this is your first time");
+          goToCms()
+       }
+    }
     </script>	
-    <body onLoad="javascript:goToCms()" >
+    <body onLoad="javascript:autoSubmitIfNew()" >
     <p>&nbsp;</p>
     <form name="cmsHomeForm" action="/spoof/post/" method="post">
             <input type="hidden" id="TYJsonEnc" name="TYJson" value="I3iWGY4m8XLdsVuKaxiZOuoJRSoP5lOdCkoQyu+3v1P3lYWps35yjyg06bZ5MlMg5cONcIQQOHrV
