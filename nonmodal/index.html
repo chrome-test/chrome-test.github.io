@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NonModal Samples</title>
+</head>
+
+<body>
+<p>JavaScript Alert:</p>
+<button onclick="alert_js()">Alert</button>
+<p> JavaScript Confirm:</p>
+<button onclick="confirm_js()" >Confirm</button>
+<p> JavaScript Prompt:</p>
+<button onclick="prompt_js()" >Prompt</button>
+<p id="demo"></p>
+
+<script>
+function alert_js() {
+  alert("Hello! I am an alert box!");
+}
+function confirm_js() {
+  confirm("Press a button!");
+}
+function prompt_js(){
+    var name = prompt("Please enter your name", "Harry Potter");
+     if (name != null) {
+         document.getElementById("demo").innerHTML =
+        "Hello " + name + "! How are you today?";
+        }
+}
+</script>
+</body>
+</html>
