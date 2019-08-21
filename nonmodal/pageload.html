@@ -1,37 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Example of Auto Loading Bootstrap Modal on Page Load</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#myModal").modal('show');
-	});
-</script>
+    <meta charset="UTF-8">
+    <title>NonModal Samples</title>
 </head>
-<body>
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="fa fa-exclamation-circle"></i>&nbsp; Model Window</h4>
-        </div>
-        <div class="modal-body">
-          On page load show modal alert
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-</div>
+<body onload="alert_js()">
 </body>
+<script>
+function alert_js() {
+  alert("Alert! on page load");
+}
+</script>
 </html>
