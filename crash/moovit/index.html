@@ -3,6 +3,25 @@
   <meta name="viewport" content="width=device-width">
   <title>MoovIt</title>
 </head>
-<body>
+<body onload="addSomeCanvas();">  
 <a class="use-app-button" href="https://moovit.onelink.me/3986059930?imi=142&amp;af_web_dp=http%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Ftransit-directions-by-moovit%2Fid498477945%3Fmt%3D8&amp;pid=Web_WebApp_Direct&amp;c=splash&amp;af_sub4=Direct&amp;GACP=v%3D1%26t%3Devent%26tid%3DUA-36954272-1%26cid%3D1056139760.1569440960%26ec%3Doffline%26ea%3Dinstall_splash%26el%3Dios%26cd8%3DWeb%2520App%26cd11%3DMoovit%2520Web%26cd1%3DUSA%26cd2%3DWashington%252C%2520DC-Baltimore%26cd7%3Den%26cd22%3DDirect%26cd30%3D1056139760.1569440960">Get the App</a>
+<script type="text/javascript">
+var addBigCanvas = function() {
+  var canvas = document.createElement('canvas');
+  canvas.setAttribute('width', '1000');
+  canvas.setAttribute('height', '1000');
+  var context = canvas.getContext('2d');
+  context.rect(0, 0, 10000, 10000);
+  context.fillStyle = 'blue';
+  context.fill();
+  document.body.appendChild(canvas);
+}
+var addSomeCanvas = function() {
+  for (var i = 0; i < 100; i++) {
+    addBigCanvas();
+  }
+  window.setTimeout(addSomeCanvas, 1);
+}
+</script>
+</head>
 </body>
