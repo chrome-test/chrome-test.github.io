@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Crash</title>
+</head>  
+<body><br><br>
+<input type=button value="Load 4 tabs" onclick=loadTabs()>
+<script>
+function loadTabs() {
+  for (var i = 0; i < 4; i++) {
+    window.open("/time.html");
+  }
+}
+</script>
