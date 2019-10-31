@@ -1,0 +1,13 @@
+<title>Multi Popups</title>
+<body>
+  <br>
+  <input type="button" value ="Click to Open Google" onclick="popup()">
+  <script>
+    function popup() {
+      window.open("https://www.google.com")
+      setTimeout(function() {
+        window.open("https://www.google.com")
+      }, 2000);      
+    }
+  </script>
+</body>
