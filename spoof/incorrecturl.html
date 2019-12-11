@@ -1,0 +1,33 @@
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by subhashinikp (http://jsbin.com/ciyegun/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+	<head></head>
+	<body>
+          <a href='htttps://www.verylongurl.googlecloudplatform.accounts.google.com'>Incorrect long</a>
+
+		Visit this link: <span id="304url">https://www.google.com:1234/</span> (please copy and paste into your address bar)<br>
+        <br/>
+          <button onclick="copyUrl();">copy url</button>
+		<script>
+		
+
+			function copyUrl(){
+				const url = document.getElementById("304url");
+				if(!window.getSelection) return;
+				var range = document.createRange();
+				range.selectNodeContents(url);
+				var sel = window.getSelection();
+				sel.removeAllRanges();
+				sel.addRange(range);
+				document.execCommand("copy");
+				}
+		</script>
+	</body>
+</html>
