@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+</style>
+</head>
+<body onload="myFunction()">
+
+<div id="overlay" onclick="off()">
+  <div id="text">Testing overlay</div>
+</div>
+
+<div style="padding:20px">
+  <h2>Text in French</h2>
+  <p>Durement frappés par les conséquences de la crise du coronavirus, les viticulteurs vont bénéficier de 76 millions d’euros d’aides supplémentaires,
+      a annoncé mercredi 5 août le premier ministre, Jean Castex, lors d’une visite à Sancerre.
+
+      Après les 170 millions d’euros accordés en mai, le gouvernement a donc gonflé l’enveloppe de 76 millions pour la porter à
+      246 au total, ce que le premier ministre a avantageusement arrondi à 250 devant la presse. « J’ai demandé à ce que ces aides puissent être distribuées
+      le plus rapidement possible, car les besoins en trésorerie sont forts », a ajouté le premier ministre.</p>
+</div>
+
+<script>
+function myFunction() {
+  document.getElementById("overlay").style.display = "block"};
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
