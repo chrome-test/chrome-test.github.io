@@ -16,7 +16,7 @@
     window.onload = function() {
       if (window.opener) {
         var result = window.opener.postMessage("Test Passed",
-            "https://window-opener-test.appspot.com/");
+            "https://chrome-test.github.io/window-opener-test/");
       }
       window.setTimeout(function() {
         myLog("Test failed. This window should have been closed.")
