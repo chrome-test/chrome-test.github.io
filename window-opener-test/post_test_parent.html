@@ -4,13 +4,13 @@
   </head>
 
   <body>
-    <button onclick="window.child = window.open('window-opener-test/post_test_child', '_blank');">Open Window</button>
+    <button onclick="window.child = window.open('/post_test_child', '_blank');">Open Window</button>
     <div id='opened-message'></div>
   </body>
 
   <script>
 	  function receiveMessage(event) {
-      if (event.origin == 'https://chrome-test.github.io/') {
+      if (event.origin == 'https://chrome-test.github.io/window-opener-test') {
         window.document.getElementById('opened-message').innerText = event.data;
         window.child.document.write('written to child!');
         window.child.close();
