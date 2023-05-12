@@ -10,7 +10,7 @@
 
   <script>
 	  function receiveMessage(event) {
-      if (event.origin == 'https://chrome-test.github.io/window-opener-test/') {
+      if (event.origin == 'https://chrome-test.github.io/') {
         window.document.getElementById('opened-message').innerText = event.data;
         window.child.document.write('written to child!');
         window.child.close();
