@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Property Test Parent</title>
+  </head>
+
+  <body>
+    <button onclick="openWindow()">Open Window</button>
+    <div id='status'></div>
+
+  </body>
+
+  <script>
+    function myLog(value) {
+      var element = window.document.getElementById('status');
+      element.innerText = element.innerText + value + '\n';
+    };
+
+    function openWindow() {
+      window.parentSecret = function() {
+        return 'parent secret';
+      };
+      var child = window.open('function_test_child', '_blank');
+      window.setTimeout(function() {
+        if (child.childSecret() == 'child secret') {
+          myLog("Test passed. Can call opener's function.");
+        }
+        else {
+          myLog("Test failed. Cannot call opener's function.");
+        }
+      }, 1000);
+    };
+
+  </script>
+</html>

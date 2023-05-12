@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Post Test</title>
+  </head>
+
+  <body>
+    <button onclick="window.child = window.open('/post_test_child', '_blank');">Open Window</button>
+    <div id='opened-message'></div>
+  </body>
+
+  <script>
+	  function receiveMessage(event) {
+      if (event.origin == 'https://window-opener-test.appspot.com') {
+        window.document.getElementById('opened-message').innerText = event.data;
+        window.child.document.write('written to child!');
+        window.child.close();
+      }
+    }
+    window.addEventListener("message", receiveMessage, false);
+  </script>
+
+</html>

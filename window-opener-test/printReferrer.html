@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Print Referrer</title>
+    <meta name="referrer" content="default">
+  </head>
+  <body>
+    <div id="referrer"></div>
+    <script>
+      var referrer = document.referrer;
+      if (referrer === undefined || referrer === null) {
+        referrer = "Undefined";
+      }
+      window.document.getElementById("referrer").innerText = referrer;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+
+  <body>
+    <div id='status'></div>
+  </body>
+
+  <script>
+    function myLog(value) {
+      var element = window.document.getElementById('status');
+      element.innerText = element.innerText + value + '\n';
+    };
+
+    window.onload = function() {
+      if (window.opener) {
+        var result = window.opener.postMessage("Test Passed",
+            "https://window-opener-test.appspot.com/");
+      }
+      window.setTimeout(function() {
+        myLog("Test failed. This window should have been closed.")
+      }, 2000);
+    }
+  </script>
+
+</html>

@@ -1,0 +1,18 @@
+<body>
+<script>
+window.setTimeout(function() {
+//   window.document.getElementById("link").click();
+}, 2000);
+</script>
+<a id='link' href='https://yahoo.com' target='_blank' onclick='window.location.href="https://www.google.com/"; event.stopPropagation();' id='link'>Open Child and Stop Propagation</a>
+
+
+<a id='link'
+   href='https://yahoo.com'
+   target='_blank'
+   onclick='setTimeout(function() { location.href="https://www.google.com/"; }, 0);'>
+  Open Child and navigate parent 2
+</a>
+
+<body>
+

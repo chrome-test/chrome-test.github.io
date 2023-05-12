@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+     var next = function() {
+       history.pushState({}, "next", "/next.html");
+     }
+
+     window.onpopstate = function() {
+       alert("popped");
+     }
+    </script>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <a href="javascript:next()">next</a> | <a href="javascript:history.go(-1)">prev</a> | <a href="javascript:history.back()">back</a>
+  </body>
+</html>

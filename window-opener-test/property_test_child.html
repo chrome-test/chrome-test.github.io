@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Property Test</title>
+  </head>
+
+  <body>
+    <div id='status'></div>
+  </body>
+
+</html>
+  <script>
+      function myLog(value) {
+        var element = window.document.getElementById('status');
+        element.innerText = element.innerText + value + '\n';
+      }
+
+      window.onload = function() {
+        if (window.opener && window.opener.parentSecret == 'parent secret') {
+          myLog("Can access opener's property. This window will close in 5s.");
+          window.childSecret = 'child secret';
+          window.setTimeout(function() {
+            window.close();
+          }, 5000);
+        }
+        else {
+          myLog("Cannot access opener's property. Test failed");
+        }
+      }
+  </script>

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Property Test</title>
+  </head>
+
+  <body>
+    <button onclick="openWindow()">Open Window</button>
+    <div id='status'></div>
+
+  </body>
+
+  <script>
+    function myLog(value) {
+      var element = window.document.getElementById('status');
+      element.innerText = element.innerText + value + '\n';
+    };
+
+    function openWindow() {
+      window.parentSecret = 'parent secret';
+      var child = window.open('property_test_child', '_blank');
+      window.setTimeout(function() {
+        if (child.childSecret == 'child secret') {
+          myLog("Test passed. Can access opener's property.");
+        }
+        else {
+          myLog("Test failed. Cannot access opener's property.");
+        }
+      }, 1000);
+    };
+
+  </script>
+</html>

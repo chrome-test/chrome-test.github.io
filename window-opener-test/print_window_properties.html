@@ -1,0 +1,14 @@
+<body>
+<div id="properties"></div>
+<script>
+  var key;
+  for (key in window) {
+    if (window.hasOwnProperty(key)) {
+      var p = window.document.createElement("p");
+      p.appendChild(document.createTextNode(key));
+      window.document.getElementById("properties").appendChild(p);
+    }
+  }
+</script>
+</body>
+

