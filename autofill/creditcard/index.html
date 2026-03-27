@@ -15,7 +15,7 @@
       html.setAttribute("dir", "rtl");
     }
   }
-  var FillFormSimpsons = function() {
+ var FillFormSimpsons = function() {
 	  var form = document.forms['form1'];
 	  form['name'].value = 'Homer Simpson';
 	  form['address'].value = '123 Main Street';
@@ -52,44 +52,64 @@
           form['n300'].value = str;
       }
 
-      /* These are not valid credit card numbers!!!! */
+     /* These are not valid credit card numbers!!!! */
       /* They pass the Luhn check but that's it.     */
       var CCFillFormSimpsons = function() {
 	  var form = document.forms['cc1'];
 	  form['name'].value = 'Homer Simpson';
 	  form['CCNo'].value = '4408-0412-3456-7893';
 	  form['CCExpiresMonth'].value = '06';
-	  form['CCExpiresYear'].value = '2030';
+	  form['CCExpiresYear'].value = '2027';
       }
       var CCFillFormSuperman = function() {
 	  var form = document.forms['cc1'];
 	  form['name'].value = 'Superman';
 	  form['CCNo'].value = '4000-4444-4444-4444';
 	  form['CCExpiresMonth'].value = '01';
-	  form['CCExpiresYear'].value = '2030';
+	  form['CCExpiresYear'].value = '2025';
       }
       var CCFillFormPresident = function() {
 	  var form = document.forms['cc1'];
 	  form['name'].value = 'Barack Obama';
 	  form['CCNo'].value = '4417-1234-5678-9113';
 	  form['CCExpiresMonth'].value = '12';
-	  form['CCExpiresYear'].value = '2030';
+	  form['CCExpiresYear'].value = '2026';
+      }
+
+      var SetMaxLength = function(elementId, maxLength) {
+          let cvcInput = document.getElementById(elementId);
+          cvcInput.setAttribute('maxlength', maxLength);
+          let cvcInputValueLabel = document.getElementById(elementId + '_value');
+          if (cvcInputValueLabel !== null) {
+            cvcInputValueLabel.innerHTML = '' + maxLength;
+          }
       }
 
       var NPFillFormSimpsons = function() {
 	  var form = document.forms['np1'];
-	  form['name'].value = 'Homer_Simpson';
+	  form['username'].value = 'Homer_Simpson';
 	  form['password'].value = 'DOH!';
       }
       var NPFillFormSuperman = function() {
 	  var form = document.forms['np1'];
-	  form['name'].value = 'Superman';
+	  form['username'].value = 'Superman';
 	  form['password'].value = 'LouisLane';
       }
       var NPFillFormPresident = function() {
 	  var form = document.forms['np1'];
-	  form['name'].value = 'Barackalypse';
+	  form['username'].value = 'Barackalypse';
 	  form['password'].value = 'ILoveGeorgeBush';
+      }
+
+      var IBANFillForm = function() {
+          var form = document.forms['iban'];
+          form['iban'].value = 'BE71096123456769';
+      }
+
+      var LoyaltyNumberFillForm = function() {
+          var form = document.forms['loyalty-program'];
+          form['loyalty-program'].value = 'Ikea';
+          form['loyalty-number'].value = "987654321";
       }
 
       var changeVisibility = function(checkbox, targetId) {
@@ -123,14 +143,14 @@
     </style>
   </head>
   <body>
-  <em>Beware what you post, all the forms send data to https://example.com.</em>
-  <br>
-  <h3>Credit Card autofill</h3>
+  <br><br>
+ <h3>Credit Card autofill</h3>
 
-<form name="cc1.1" id="cc1" action="https://example.com/" method="post">
-  Name on card: <input title="credit_card_name" autofocus="" type="text" name="name" id="credit_card_name"><br>
-  Credit card number: <input title="credit_card_number" type="text" name="CCNo" id="credit_card_number"><br>
-  Expiry Date: <select title="CCExpiresMonth" name="CCExpiresMonth">
+<form name="cc1.1" id="cc1" action="https://dump-truck.appspot.com/post.html" method="post">
+  Name on card: <input autofocus="" type="text" name="name" id="credit_card_name"><br>
+  Credit card number: <input type="text" name="CCNo" id="credit_card_number"><br>
+  Expiry Date: <select name="CCExpiresMonth">
+    <option value>MM</option>
     <option value="01">01</option>
     <option value="02">02</option>
     <option value="03">03</option>
@@ -142,31 +162,25 @@
     <option value="09">09</option>
     <option value="10">10</option>
     <option value="11">11</option>
-    <option value="12">12</option>  
+    <option value="12">12</option>
   </select>
   /
-<select title="CCExpiresYear" name="CCExpiresYear">
-    <option value="2010">2010</option>
-    <option value="2011">2011</option>
-    <option value="2012">2012</option>
-    <option value="2013">2013</option>
-    <option value="2014">2014</option>
-    <option value="2015">2015</option>
-    <option value="2016">2016</option>
-    <option value="2017">2017</option>
-    <option value="2018">2018</option>
-    <option value="2019">2019</option>
-    <option title= "2020" value="2020">2020</option>
-    <option value="2021">2021</option>
-    <option value="2022">2022</option>
-    <option value="2023">2023</option>
-	<option value="2024">2024</option>
-	<option value="2025">2025</option>
-	<option value="2026">2026</option>
-	<option value="2027">2027</option>
-	<option value="2028">2028</option>
-	<option value="2029">2029</option>
-	<option value="2030">2030</option>
+<select name="CCExpiresYear">
+    <option value>YYYY</option>
+    <option value="2025">2025</option>
+    <option value="2026">2026</option>
+    <option value="2027">2027</option>
+    <option value="2028">2028</option>
+    <option value="2029">2029</option>
+    <option value="2030">2030</option>
+    <option value="2031">2031</option>
+    <option value="2032">2032</option>
+    <option value="2033">2033</option>
+    <option value="2034">2034</option>
+    <option value="2035">2035</option>
+    <option value="2036">2036</option>
+    <option value="2037">2037</option>	
+    <option value="2038">2038</option>
   </select>
   <br>
   CVC: <input name="cvc">
@@ -183,6 +197,7 @@
 <br>
 <button type="button" onclick="CCFillFormPresident()">CC Fill Form (President)</button>
 <br>
+
 </p>
 <hr>
 <button type="button" onclick="FlipRTL()">RTL &lt;-&gt; LTR</button>
